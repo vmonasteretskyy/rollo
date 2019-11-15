@@ -82,8 +82,19 @@
     }
 
     header.header .submenu {
-        padding: 30px 30px 35px 30px;
+        padding: 0 30px 0 30px;
         width: 230px;
+    }
+
+
+
+    .header__menu>ul li span:hover+.submenu,
+    .header__menu>ul li span+.submenu:hover {
+        display: block;
+        height: auto;
+        overflow: initial;
+        opacity: 1;
+        padding: 30px 30px 35px 30px;
     }
 
     header.header .header__categorypic>figure div {

@@ -35,5 +35,9 @@ $(document).ready(function () {
     })
     // menu category pic - END
 
-
+    // input slyled
+    $(function () {
+        $('select').styler();
+    });
+    // input slyled - END
 });

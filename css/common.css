@@ -42,7 +42,7 @@ header.header {
     left: 0;
     background-color: #fff;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.06);
-    z-index: 10;
+    z-index: 20;
     width: 100%;
     display: flex;
     align-items: center;
@@ -218,12 +218,31 @@ header.header .submenu {
     position: absolute;
     background-color: #fff;
     width: 300px;
-    padding: 40px 50px 48px 50px;
+    padding: 0 30px 0 30px;
     transform: translateX(-50%);
     left: 50%;
     border-top: 1px solid #f2f2f2;
     box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.06);
-    display: none;
+    /*display: none;
+    */
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+
+}
+
+.header__menu>ul li span:hover+.submenu,
+.header__menu>ul li span+.submenu:hover {
+    display: block;
+    height: auto;
+    overflow: initial;
+    opacity: 1;
+    padding: 30px 30px 35px 30px;
 }
 
 header.header .submenu li {
@@ -977,16 +996,135 @@ footer.footer .footfig {
 /* =======================================================Footer - sect==================================================== */
 
 /* =======================================================Breadcrums==================================================== */
+.breadcrums {
+    padding: 16px 0 8px 0;
+}
+
+.breadcrums ul li {
+    display: inline-block;
+    vertical-align: middle;
+    color: #ACBBB6;
+    font-size: 16px;
+    line-height: 140%;
+    /* position: relative; */
+}
+
+.breadcrums ul li a {
+    font-size: 16px;
+    line-height: 140%;
+    color: #188288;
+    text-decoration: none;
+}
+
+.breadcrums ul li a:hover {
+    text-decoration: underline;
+}
+
+.breadcrums ul li:not(:first-child):before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 1px;
+    background: #ACBBB6;
+    vertical-align: middle;
+    margin: 0 8px 0 6px;
+}
+
+/* =======================================================Breadcrums - END=================================================== */
 
 
-/* =======================================================Breadcrums=================================================== */
+/* =======================================================Sort category=================================================== */
+.filter-category {
+    text-align: right;
+    border-bottom: 1px solid #F6F8F7;
+    padding-bottom: 5px;
+}
 
+.filtercat {
+    text-align: right;
+    max-width: 280px;
+    width: 100%;
+    display: inline-block;
+    position: relative;
+}
 
+.filtercat:before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url(../image/icon/exchange-filter.svg);
+    background-position: center center;
+    background-size: 100%;
+    position: absolute;
+    left: 0;
+    top: 5px;
+}
 
+.filtercat .jq-selectbox.jqselect {
+    width: calc(100% - 32px);
+    text-align: left;
+}
 
+.filtercat .jq-selectbox__select {
+    border: none;
+    background: #fff;
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
+    box-shadow: none;
+}
 
+.filtercat .jq-selectbox.jqselect.focused .jq-selectbox__select {
+    border: none;
+}
 
+.filtercat .jq-selectbox__select-text {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 140%;
+    color: #6F6F6F;
+    font-family: 'Roboto Condensed', sans-serif;
+}
 
+.filtercat .jq-selectbox__select {
+    padding-left: 0;
+    padding-right: 20px;
+}
+
+.filtercat .jq-selectbox__trigger {
+    width: 15px;
+    border-left: none;
+    background-image: url(../image/arrow-filter.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 25px;
+    background-size: 100%;
+}
+
+.filtercat .jq-selectbox__trigger-arrow {
+    display: none;
+}
+
+.filtercat .jq-selectbox li:hover {
+    background-color: #188288;
+}
+
+/* =======================================================Sort category - END=================================================== */
+
+.category-section {
+    padding: 24px 0 0 0;
+}
+
+/* =======================================================Category filter - END=================================================== */
+.col-filter {
+    width: 200px;
+    padding: 0 17px;
+}
+
+/* =======================================================Category filter - END=================================================== */
 
 
 
