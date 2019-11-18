@@ -112,5 +112,16 @@ $(document).ready(function () {
     // remove row - buy page
     $('.incard__remove').click(function () {
         $(this).parents('.incard__row').fadeOut();
+
     });
+    // remove row - buy page - END
+
+    // accordeon
+    $('.measure__acctitle').click(function () {
+        $(this).next().slideToggle();
+        $(this).parent('.measure__accblock').toggleClass('shadow');
+    });
+
+
+    // accordeon - END
 });
