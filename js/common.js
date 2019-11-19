@@ -121,7 +121,51 @@ $(document).ready(function () {
         $(this).next().slideToggle();
         $(this).parent('.measure__accblock').toggleClass('shadow');
     });
-
-
     // accordeon - END
+
+
 });
+
+
+
+
+// MAP
+if ($('*').is('#map')) {
+
+    function initMap() {
+
+        let lat1 = 49.811954, lng1 = 23.9751068;
+        map = new google.maps.Map(document.getElementById("map"), {
+            center: {
+                lat: 49.8113999, lng: 23.9778614
+            }
+            , zoom: 17, mapTypeId: "roadmap", panControl: !1, zoomControl: !1, scaleControl: !1, disableDefaultUI: !0, styles: [
+
+            ],
+            // zoomControl: true,
+            // mapTypeControl: true,
+            // scaleControl: true,
+            // streetViewControl: true,
+            // rotateControl: true,
+            // fullscreenControl: true
+        }
+        );
+
+        var features = [
+            {
+                position: new google.maps.LatLng(lat1, lng1),
+                type: 'info'
+            }
+        ];
+
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(lat1, lng1),
+            map: map,
+            icon: {
+                url: "image/icon/marker-map.svg",
+                scaledSize: new google.maps.Size(18, 18) // pixels
+            }
+        });
+    }
+}
+// MAP END
