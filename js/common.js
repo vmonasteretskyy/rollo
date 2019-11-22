@@ -119,11 +119,47 @@ $(document).ready(function () {
     // accordeon
     $('.measure__acctitle').click(function () {
         $(this).next().slideToggle();
+        $('.measure__accdescription').not($(this).next()).slideUp();
+
+        $('.measure__accblock').not($(this).parent()).removeClass('shadow');
         $(this).parent('.measure__accblock').toggleClass('shadow');
     });
     // accordeon - END
+    // USER form
+    $('.user-form__field .edit-btn').click(function () {
+        $(this).next().prop('disabled', false);
+        $(this).parent().addClass('active-inpf');
+        $(this).hide();
+    });
 
+    // parallax
+    // parallax
+    if ($('*').is('#scene')) {
+        $("#scene").parallax();
+    }
 
+    // login
+    $('.signforms .registration').click(function () {
+        $('.logintab').hide();
+        $('.regtab').show();
+    });
+    $('.forgotpass-text').click(function () {
+        $('.logintab').hide();
+        $('.forgotpasstab').show();
+    });
+    $('.signforms__btnsbox .back').click(function () {
+        $('.forgotpasstab, .regtab').hide();
+        $('.logintab').show();
+    });
+    // product slider
+    $('.prodslider').slick({
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        nextArrow: '<button type="button" class="slick-next"></button>',
+        prevArrow: '<button type="button" class="slick-prev"></button>',
+        dots: false,
+        arrows: true,
+    });
 });
 
 
@@ -133,12 +169,21 @@ $(document).ready(function () {
 if ($('*').is('#map')) {
 
     function initMap() {
-
+        if ($(window).width() < 768) {
+            var latc1 = 49.8113999;
+            var lngc1 = 23.9748614;
+        } else {
+            var latc1 = 49.8113999;
+            var lngc1 = 23.9778614;
+        }
         let lat1 = 49.811954, lng1 = 23.9751068;
         map = new google.maps.Map(document.getElementById("map"), {
             center: {
-                lat: 49.8113999, lng: 23.9778614
+                lat: latc1, lng: lngc1
             }
+            // center: {
+            //     lat: 49.8113999, lng: 23.9778614
+            // }
             , zoom: 17, mapTypeId: "roadmap", panControl: !1, zoomControl: !1, scaleControl: !1, disableDefaultUI: !0, styles: [
 
             ],
