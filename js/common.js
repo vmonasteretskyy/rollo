@@ -160,6 +160,31 @@ $(document).ready(function () {
         dots: false,
         arrows: true,
     });
+    // more reviews
+    $('.review-more').click(function () {
+        $('.more-reviewssect').slideToggle();
+        $(this).toggleClass('rotatearrow');
+    });
+
+    // colors slider
+    $('.colors-slider').slick({
+        slidesToShow: 9,
+        slidesToScroll: 1,
+        nextArrow: '<button type="button" class="slick-next"></button>',
+        prevArrow: '<button type="button" class="slick-prev"></button>',
+        dots: false,
+        arrows: true,
+    });
+
+    // products btns
+    $('.left-right span').click(function () {
+        $('.left-right span').removeClass('active');
+        $(this).addClass('active');
+    });
+    $('.systems-color > div').click(function () {
+        $('.systems-color > div').removeClass('active');
+        $(this).addClass('active');
+    });
 });
 
 
