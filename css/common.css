@@ -328,7 +328,7 @@ header.header .submenu li a:after {
 }
 
 
-header.header .col-xl-7.col-lg-6 {
+header.header .col-xl-6.col-lg-5 {
     position: initial;
 }
 
@@ -604,6 +604,40 @@ header.header .submenu li a:hover:after,
 
 .header.login #header__searchform {
     top: 73px;
+}
+
+.header__lang ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.header__lang ul li {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.header__lang ul li:nth-child(1) {
+    margin-right: 5px;
+}
+
+.header__lang ul li a {
+    text-decoration: none;
+    color: #182328;
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: 0.04em;
+}
+
+.header__lang ul li a:hover {
+    color: #188288;
+}
+
+.header__lang {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* ==========================================================Header end======================================================= */

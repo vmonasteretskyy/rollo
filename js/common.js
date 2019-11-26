@@ -13,7 +13,7 @@ $(document).ready(function () {
     // burger menu
     $('.burger').click(function () {
         $(this).toggleClass('active');
-        $('header.header .col-xl-7.col-lg-6').toggle();
+        $('header.header .col-xl-6.col-lg-5').toggle();
         $('.submenu').hide();
         $('.header__menu>ul li span').removeClass('actaft');
     });
