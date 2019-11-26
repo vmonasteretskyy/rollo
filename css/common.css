@@ -3944,7 +3944,19 @@ footer.footer .footfig {
     justify-content: center;
 }
 
+.header__lang ul li {
+    position: relative;
+}
 
+.header__lang ul li:first-child:after {
+    content: "";
+    position: absolute;
+    right: -4.5px;
+    top: 0;
+    height: 22px;
+    width: 1px;
+    background-color: #a1b6b7;
+}
 
 /* =======================================================Modal - END=================================================== */
 
