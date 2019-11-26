@@ -392,8 +392,13 @@
         font-size: 20px;
     }
 
+    #header__searchform {
+        top: 45px;
+    }
 
-
+    .header.login #header__searchform {
+        top: 60px;
+    }
 
     /* fonts */
     .header__menu>ul li a,
@@ -1454,6 +1459,16 @@
         margin: 25px auto 0;
     }
 
+    #header__searchform {
+        right: 15px;
+        max-width: 100%;
+        width: 100%;
+        min-width: 288px;
+    }
+
+    .header.login #header__searchform {
+        top: 45px;
+    }
 
     /* 575 */
     /* fonts */
@@ -1488,6 +1503,10 @@
 
     .ordering h3 {
         margin-bottom: 20px;
+    }
+
+    #scene {
+        display: none;
     }
 
 }

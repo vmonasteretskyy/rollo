@@ -288,6 +288,10 @@ $(document).ready(function () {
         $(".settblock.new-size, .sizelist__boxnew .sizelist__row").show();
     });
 
+    // header search
+    $('.header__search img').click(function () {
+        $(this).next().fadeToggle();
+    });
 });
 
 
@@ -345,52 +349,51 @@ if ($('*').is('#map')) {
 
 
 
+if ($('*').is('.modal-sizeset')) {
+    $(function () {
 
-$(function () {
+        var $document = $(document);
+        var selector = '[data-rangeslider]';
+        var $element = $(selector);
 
-    var $document = $(document);
-    var selector = '[data-rangeslider]';
-    var $element = $(selector);
+        // For ie8 support
+        var textContent = ('textContent' in document) ? 'textContent' : 'innerText';
 
-    // For ie8 support
-    var textContent = ('textContent' in document) ? 'textContent' : 'innerText';
-
-    // Example functionality to demonstrate a value feedback
-    function valueOutput(element) {
-        var value = element.value;
-        var output = element.parentNode.getElementsByTagName('output')[0] || element.parentNode.parentNode.getElementsByTagName('output')[0];
-        output[textContent] = value;
-    }
-
-    $document.on('input', 'input[type="range"], ' + selector, function (e) {
-        valueOutput(e.target);
-    });
-
-
-    // Basic rangeslider initialization
-    $element.rangeslider({
-
-        // Deactivate the feature detection
-        polyfill: false,
-
-        // Callback function
-        onInit: function () {
-            valueOutput(this.$element[0]);
-        },
-
-        // Callback function
-        onSlide: function (position, value) {
-            // console.log('onSlide');
-            // console.log('position: ' + position, 'value: ' + value);
-        },
-
-        // Callback function
-        onSlideEnd: function (position, value) {
-            // console.log('onSlideEnd');
-            // console.log('position: ' + position, 'value: ' + value);
+        // Example functionality to demonstrate a value feedback
+        function valueOutput(element) {
+            var value = element.value;
+            var output = element.parentNode.getElementsByTagName('output')[0] || element.parentNode.parentNode.getElementsByTagName('output')[0];
+            output[textContent] = value;
         }
+
+        $document.on('input', 'input[type="range"], ' + selector, function (e) {
+            valueOutput(e.target);
+        });
+
+
+        // Basic rangeslider initialization
+        $element.rangeslider({
+
+            // Deactivate the feature detection
+            polyfill: false,
+
+            // Callback function
+            onInit: function () {
+                valueOutput(this.$element[0]);
+            },
+
+            // Callback function
+            onSlide: function (position, value) {
+                // console.log('onSlide');
+                // console.log('position: ' + position, 'value: ' + value);
+            },
+
+            // Callback function
+            onSlideEnd: function (position, value) {
+                // console.log('onSlideEnd');
+                // console.log('position: ' + position, 'value: ' + value);
+            }
+        });
+
     });
-
-});
-
-
+}
