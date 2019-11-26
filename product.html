@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="css/jquery.formstyler.css">
     <link rel="stylesheet" href="css/jquery.formstyler.theme.css">
+    <link rel="stylesheet" href="css/rangeslider.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700&display=swap&subset=cyrillic"
@@ -208,7 +209,7 @@
                     <div class="col-lg-5">
                         <div class="product-topsect__pic">
                             <img src="image/prtrig.svg" alt="">
-                            <div>
+                            <div class="prmainpic">
                                 <img src="image/product.svg" alt="product">
                             </div>
                         </div>
@@ -292,7 +293,20 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-6">
+                            <div class="col-xl-6 col-lg-7 col-md-6 col-sm-6">
+                                <div class="settblock new-size">
+                                    <p class="title">Обраний розмір</p>
+                                    <div class="sizelist__boxnew">
+                                        <div class="sizelist__row active">
+                                            <span class="newswidth"><text>420</text> мм</span><img
+                                                src="image/icon/x.svg" alt="x"><span
+                                                class="newsheight"><text>1650</text>
+                                                мм</span>
+                                            <img src="image/icon/cancel.svg" alt="delete" class="delete-size">
+                                        </div>
+
+                                    </div>
+                                </div>
                                 <div class="settblock">
                                     <p class="title">Стандартні розміри</p>
                                     <div class="sizelist">
@@ -332,7 +346,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
+                            <div class="col-xl-6 col-lg-5 col-md-6 col-sm-6">
                                 <div class="settblock">
                                     <p class="title">Сторона управління</p>
                                     <div class="left-right">
@@ -349,16 +363,16 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
+                            <div class="col-lg-6 col-md-6 col-sm-6">
 
-                                <a href="#" class="prwhitebtn">
+                                <span class="prwhitebtn">
                                     <span><img src="image/icon/shape-size-interface-symbol.svg" alt="icon">Інший
                                         розмір
                                         вікон</span>
-                                </a>
+                                </span>
 
                             </div>
-                            <div class="col-lg-6">
+                            <div class="col-lg-6 col-md-6 col-sm-6">
                                 <a href="#" class="prblackbtn">
                                     <span>Додати до корзини<img src="image/icon/shopping-basketpr.svg"
                                             alt="icon"></span>
@@ -459,7 +473,7 @@
         <section class="product-block product-text">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 col-md-6">
                         <h3>Опис</h3>
                         <p>
                             Тканинні ролети - надзвичайно просте, але дуже ефективне і популярне рішення для оформлення
@@ -477,7 +491,7 @@
                         </p>
                         <a href="#" class="black-btn">Як правино поміряти вікно? </a>
                     </div>
-                    <div class="col-lg-5 offset-lg-1">
+                    <div class="col-lg-5 offset-lg-1  col-md-6">
                         <img src="image/tkaninni_na_sait 1.png" alt="image">
                     </div>
                 </div>
@@ -557,6 +571,51 @@
 
     </main>
 
+
+
+    <div class="modal-section">
+        <div class="align-block">
+            <div class="modal-sizeset">
+                <img src="image/icon/cancel.svg" alt="cancel" class="modal-cancel">
+                <select name="" id="">
+                    <option value="0">Ролети Тканинні Льон Білий</option>
+                    <option value="1">Ролети Тканинні Льон Синій</option>
+                    <option value="2">Ролети Тканинні Льон Зелений</option>
+                    <option value="3">Ролети Тканинні Льон Жовтий</option>
+                    <option value="4">Ролети Тканинні Льон Червоний</option>
+                </select>
+
+                <div class="rangeslider-sect">
+                    <div>
+                        <div class="rangebox">
+                            <p class="range__title">Ширина</p>
+                            <input type="range" min="0" max="5000" value="1640" step="100" data-rangeslider>
+                            <output class="widthrange"></output>
+                        </div>
+                        <div class="rangebox">
+                            <p class="range__title">Висота</p>
+                            <input type="range" min="0" max="5000" value="2740" step="100" data-rangeslider>
+                            <output class="heighthrange"></output>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modalrange__bottsect">
+                    <div class="row">
+                        <div class="col-sm-6 col-6">
+                            <p class="lefttext">Вартість / шт.</p>
+                        </div>
+                        <div class="col-sm-6 col-6">
+                            <p class="righttext">1220 грн</p>
+                        </div>
+                    </div>
+                    <a href="#" class="black-btn modalbtn">Додати розмір</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <footer class="footer">
         <div class="footfig">
             <p>
@@ -620,6 +679,7 @@
     <script src="js/slick.min.js"></script>
     <script src="js/jquery.formstyler.min.js"></script>
     <script src="js/jquery.inputmask.min.js"></script>
+    <script src="js/rangeslider.min.js"></script>
     <script src="js/common.js"></script>
 </body>
 

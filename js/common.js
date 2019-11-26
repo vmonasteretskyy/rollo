@@ -133,7 +133,6 @@ $(document).ready(function () {
     });
 
     // parallax
-    // parallax
     if ($('*').is('#scene')) {
         $("#scene").parallax();
     }
@@ -159,6 +158,33 @@ $(document).ready(function () {
         prevArrow: '<button type="button" class="slick-prev"></button>',
         dots: false,
         arrows: true,
+        responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 4,
+                }
+            },
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 1,
+                }
+            }
+        ]
+
     });
     // more reviews
     $('.review-more').click(function () {
@@ -174,6 +200,32 @@ $(document).ready(function () {
         prevArrow: '<button type="button" class="slick-prev"></button>',
         dots: false,
         arrows: true,
+        responsive: [
+            {
+                breakpoint: 1541,
+                settings: {
+                    slidesToShow: 8,
+                }
+            },
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 7,
+                }
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 5,
+                }
+            },
+            {
+                breakpoint: 361,
+                settings: {
+                    slidesToShow: 4,
+                }
+            }
+        ]
     });
 
     // products btns
@@ -185,6 +237,57 @@ $(document).ready(function () {
         $('.systems-color > div').removeClass('active');
         $(this).addClass('active');
     });
+    $('.sizelist__row').click(function () {
+        $('.sizelist__row').not($(this)).removeClass('active');
+        $(this).addClass('active');
+    });
+
+    // modal
+    $('.prwhitebtn').click(function () {
+        $('.modal-section').fadeIn();
+    });
+
+    $('.modal-cancel').click(function () {
+        $(this).parents('.modal-section').fadeOut();
+    });
+
+    $('.modal-section').click(function (event) {
+        if (!$(event.target).closest(".modal-sizeset").length) {
+            $('.modal-section').fadeOut();
+        }
+    });
+
+    $('.modalbtn').click(function () {
+        $('.modal-section').fadeOut();
+        $(".settblock.new-size").show();
+    });
+
+
+
+
+    $('.delete-size').click(function () {
+        $(this).parent().hide();
+        $('.sizelist').removeClass('littheight');
+        $(".settblock.new-size").hide();
+        // if ($(".sizelist__boxnew .sizelist__row").length == 0) {
+        //     $(".settblock.new-size").hide();
+        // }
+    });
+
+
+    $('.modalbtn').click(function () {
+        var widthrange = $('.widthrange').html();
+        var heighthrange = $('.heighthrange').html();
+        console.log(widthrange);
+        console.log(heighthrange);
+
+        $('.newswidth text').html(widthrange);
+        $('.newsheight text').html(heighthrange);
+
+        $('.sizelist').addClass('littheight');
+        $(".settblock.new-size, .sizelist__boxnew .sizelist__row").show();
+    });
+
 });
 
 
@@ -232,10 +335,62 @@ if ($('*').is('#map')) {
             position: new google.maps.LatLng(lat1, lng1),
             map: map,
             icon: {
-                url: "image/icon/marker-map.svg",
-                scaledSize: new google.maps.Size(18, 18) // pixels
+                url: "image/icon/pin.svg",
+                scaledSize: new google.maps.Size(40, 40) // pixels
             }
         });
     }
 }
 // MAP END
+
+
+
+
+$(function () {
+
+    var $document = $(document);
+    var selector = '[data-rangeslider]';
+    var $element = $(selector);
+
+    // For ie8 support
+    var textContent = ('textContent' in document) ? 'textContent' : 'innerText';
+
+    // Example functionality to demonstrate a value feedback
+    function valueOutput(element) {
+        var value = element.value;
+        var output = element.parentNode.getElementsByTagName('output')[0] || element.parentNode.parentNode.getElementsByTagName('output')[0];
+        output[textContent] = value;
+    }
+
+    $document.on('input', 'input[type="range"], ' + selector, function (e) {
+        valueOutput(e.target);
+    });
+
+
+    // Basic rangeslider initialization
+    $element.rangeslider({
+
+        // Deactivate the feature detection
+        polyfill: false,
+
+        // Callback function
+        onInit: function () {
+            valueOutput(this.$element[0]);
+        },
+
+        // Callback function
+        onSlide: function (position, value) {
+            // console.log('onSlide');
+            // console.log('position: ' + position, 'value: ' + value);
+        },
+
+        // Callback function
+        onSlideEnd: function (position, value) {
+            // console.log('onSlideEnd');
+            // console.log('position: ' + position, 'value: ' + value);
+        }
+    });
+
+});
+
+

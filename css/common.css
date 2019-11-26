@@ -3264,7 +3264,7 @@ footer.footer .footfig {
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
-    border: 1px solid #fff;
+    border: 1px solid rgba(255, 255, 255, 0);
     width: 64px;
     height: 64px;
     cursor: pointer;
@@ -3564,6 +3564,7 @@ footer.footer .footfig {
     -moz-transition: .5s;
     -ms-transition: .5s;
     -o-transition: .5s;
+    cursor: pointer;
 }
 
 .prwhitebtn:hover {
@@ -3626,8 +3627,246 @@ footer.footer .footfig {
     z-index: 1;
 }
 
+.colors-slider .slick-arrow {
+    cursor: pointer;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+}
+
+.colors-slider .slick-arrow:hover {
+    opacity: .7;
+}
+
+.sizelist__boxnew {
+    padding-right: 35px;
+    max-width: 291px;
+}
+
+.sizelist__boxnew .sizelist__row {
+    position: relative;
+}
+
+.delete-size {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    right: -30px;
+    top: 50%;
+    margin-top: -7px;
+    background: url(../image/icon/cancel.svg) no-repeat center center;
+    background-size: 100%;
+}
+
+.settblock.new-size {
+    display: none;
+}
+
+.sizelist.littheight {
+    height: 152px;
+}
+
+.sizelist.littheight .sizelist__box {
+    height: 85px;
+}
+
+.sizelist__boxnew .sizelist__row {
+    border: 1px solid #ACBBB6;
+}
+
 /* =======================================================Product - END=================================================== */
 
+/* =======================================================Modal=================================================== */
+.modal-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 99;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.modal-sizeset {
+    background-color: #fff;
+    width: 100%;
+    max-width: 698px;
+    padding: 56px 70px 62px 70px;
+    box-shadow: 0px 4px 15px rgba(60, 57, 57, 0.06);
+    border-radius: 16px;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    -ms-border-radius: 16px;
+    -o-border-radius: 16px;
+    position: relative;
+}
+
+.modal-sizeset .jq-selectbox__select {
+    box-shadow: none;
+    height: 40px;
+    background-color: #fff;
+    border: 1px solid #ACBBB6;
+    border-bottom-color: #ACBBB6;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    color: #182328;
+    text-shadow: none;
+    font: 18px/25px 'Roboto Condensed', sans-serif;
+    display: flex;
+    align-items: center;
+    background-image: url(../image/icon/fabric-icon.svg);
+    background-position: left 10px center;
+    background-repeat: no-repeat;
+    padding-left: 46px;
+}
+
+.modal-sizeset .jq-selectbox {
+    width: 100%;
+    max-width: 406px;
+    margin-bottom: 48px;
+}
+
+.modal-sizeset .jq-selectbox__trigger-arrow {
+    display: none;
+}
+
+.modal-sizeset .jq-selectbox__trigger {
+    border-left: 0;
+    background-image: url(../image/arrow-filter.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 15px auto;
+}
+
+.rangeslider--horizontal {
+    height: 4px;
+}
+
+.rangeslider-sect .rangebox .rangeslider {
+    max-width: 406px;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.rangeslider__handle {
+    width: 16px;
+    height: 16px;
+    background-image: none;
+    background-color: #188288;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.18);
+    border: none;
+}
+
+.rangeslider__handle:after {
+    display: none;
+}
+
+.rangeslider--horizontal .rangeslider__handle {
+    top: -6px;
+}
+
+.rangeslider__fill {
+    background: #188288;
+    position: absolute;
+}
+
+.range__title {
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 140%;
+    color: #182328;
+    margin: 0 0 10px 0;
+}
+
+.rangeslider-sect .rangebox {
+    margin-bottom: 24px;
+}
+
+.rangebox output {
+    margin-left: 40px;
+    width: 100px;
+    border-bottom: 1px solid #ACBBB6;
+    display: inline-block;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 140%;
+    color: #182328;
+    vertical-align: bottom;
+    position: relative;
+}
+
+.rangebox output:after {
+    content: "мм";
+    display: inline-block;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 140%;
+    color: #182328;
+    margin-left: 5px;
+}
+
+.modalrange__bottsect {
+    padding-top: 38px;
+    border-top: 1px solid #E8EEEA;
+}
+
+.modalrange__bottsect .lefttext {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 140%;
+    color: #182328;
+    margin: 0;
+}
+
+.modalrange__bottsect .righttext {
+    font-size: 24px;
+    line-height: 140%;
+    text-align: right;
+    color: #182328;
+    margin: 0;
+}
+
+.rangeslider-sect {
+    margin-bottom: 40px;
+}
+
+.modalbtn {
+    text-decoration: none;
+    margin-top: 25px;
+}
+
+.modal-cancel {
+    width: 18px;
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    cursor: pointer;
+}
+
+.align-block {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/* =======================================================Modal - END=================================================== */
 
 
 /* nostyle-list */
