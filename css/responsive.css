@@ -1488,6 +1488,10 @@
         justify-content: flex-end;
     }
 
+    header.header:not(.login) .header__search {
+        margin-right: 10px;
+    }
+
     /* 575 */
     /* fonts */
     .blackinfo-section p.blackinfo-section__title,
@@ -1544,5 +1548,13 @@
 
     header.header .burger {
         margin-left: 5px;
+    }
+
+    header.header:not(.login) .header__basket {
+        margin-right: 10px;
+    }
+
+    header.header:not(.login) .header__search {
+        margin-right: 7px;
     }
 }
